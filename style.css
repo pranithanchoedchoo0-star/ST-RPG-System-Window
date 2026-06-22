@@ -375,9 +375,7 @@ details[open] summary{
 #rpg-system-window.hidden{
     display:none;
 }
-
 $("#rpg-system-window").addClass("hidden");
-
 <div id="rpg-toggle-btn">
     <img src="https://files.catbox.moe/x037iq.jpeg">
 </div>
