@@ -197,7 +197,6 @@ ${html}
     }
 
 });
-
 function getLastMessage(){
 
     const messages = $(".mes");
@@ -206,7 +205,6 @@ function getLastMessage(){
 
     return $(messages[messages.length-1]).text();
 }
-
 function parseRPGState(text){
 
     const match =
@@ -224,7 +222,6 @@ function parseRPGState(text){
         return null;
     }
 }
-
 function updateUI(data){
 
     if(!data) return;
@@ -241,7 +238,6 @@ function updateUI(data){
     $(".M")
         .text(`Coin: ${data.coin}`);
 }
-
 setInterval(() => {
 
     const text = getLastMessage();
