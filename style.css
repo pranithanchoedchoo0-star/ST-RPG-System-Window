@@ -1,1 +1,333 @@
+/* ===== MAIN WINDOW ===== */
 
+#rpg-system-window{
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#rpg-system-window *{
+    box-sizing: border-box;
+}
+
+.Q{
+    font-family:'Sarabun',sans-serif;
+    width:340px;
+    min-width:340px;
+    max-width:340px;
+
+    background:linear-gradient(145deg,#1e2024,#141619);
+
+    border-radius:10px;
+    padding:12px;
+
+    border:1px solid #44aaff40;
+
+    box-shadow:0 4px 20px rgba(0,0,0,.6);
+
+    color:#e0e0e0;
+
+    box-sizing:border-box;
+
+    user-select:none;
+}
+
+/* ===== TAB BUTTONS ===== */
+
+.Q input[type=radio]{
+    display:none;
+}
+
+.Q label{
+    font-size:10px;
+    padding:6px 14px;
+
+    border-radius:6px 6px 0 0;
+
+    color:#8899a6;
+
+    cursor:pointer;
+
+    display:inline-block;
+
+    transition:all .2s;
+
+    font-weight:600;
+}
+
+.Q input:checked + label{
+    background:#44aaff15;
+    color:#44aaff;
+    border-bottom:2px solid #44aaff;
+}
+
+/* ===== TAB PANEL ===== */
+
+.P{
+    display:none;
+
+    background:rgba(0,0,0,.25);
+
+    border-radius:0 6px 6px 6px;
+
+    padding:10px;
+
+    margin-top:-1px;
+
+    border:1px solid #44aaff20;
+
+    height:180px;
+
+    box-sizing:border-box;
+
+    overflow:hidden;
+}
+
+#q1:checked~.P1,
+#q2:checked~.P2,
+#q3:checked~.P3,
+#q4:checked~.P4,
+#q5:checked~.P5,
+#q6:checked~.P6{
+    display:flex;
+    flex-direction:column;
+    animation:sI .3s ease;
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes sI{
+    from{
+        opacity:0;
+        transform:translateY(-5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== HEADER ===== */
+
+.H{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid #44aaff30;
+
+    cursor:move;
+}
+
+.T{
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#44aaff;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+}
+
+.M{
+    font-size:9px;
+
+    background:rgba(255,255,255,.05);
+
+    padding:3px 8px;
+
+    border-radius:4px;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+/* ===== SCROLL AREA ===== */
+
+.SC{
+    flex:1;
+
+    overflow-y:auto;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#44aaff40 transparent;
+}
+
+.SC::-webkit-scrollbar{
+    width:3px;
+}
+
+.SC::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.SC::-webkit-scrollbar-thumb{
+    background:#44aaff40;
+    border-radius:2px;
+}
+
+/* ===== CARD ===== */
+
+.QI{
+    margin-bottom:8px;
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:6px;
+
+    padding:9px;
+
+    border-left:3px solid #666;
+
+    transition:background .2s;
+}
+
+.QI:hover{
+    background:rgba(255,255,255,.06);
+}
+
+/* ===== TEXT ===== */
+
+.QN{
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:2px;
+}
+
+.QT{
+    font-size:8px;
+
+    color:#8899a6;
+}
+
+/* ===== DETAILS ===== */
+
+details{
+    margin-top:6px;
+}
+
+summary{
+    font-size:8px;
+
+    color:#44aaff;
+
+    cursor:pointer;
+
+    list-style:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    opacity:.85;
+
+    transition:opacity .2s;
+}
+
+summary:hover{
+    opacity:1;
+    text-decoration:underline;
+}
+
+summary::before{
+    content:'◇';
+    font-size:9px;
+}
+
+details[open] summary::before{
+    content:'◆';
+}
+
+details[open] summary{
+    margin-bottom:6px;
+}
+
+.DT{
+    font-size:9px;
+
+    color:#b0b0b0;
+
+    padding:8px;
+
+    background:rgba(0,0,0,.3);
+
+    border-radius:4px;
+
+    border:1px solid rgba(255,255,255,.05);
+}
+
+/* ===== GLOW EFFECT ===== */
+
+.NW{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(68,170,255,.4);
+    }
+
+    70%{
+        box-shadow:0 0 0 4px rgba(68,170,255,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(68,170,255,0);
+    }
+
+}
+
+/* ===== FOOTER ===== */
+
+.F{
+    font-size:8px;
+
+    color:#556677;
+
+    text-align:right;
+
+    margin-top:10px;
+
+    padding-top:5px;
+
+    border-top:1px solid #ffffff08;
+}
+
+.SC .QI:last-child{
+    margin-bottom:0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:768px){
+
+    #rpg-system-window{
+        top:60px;
+        right:10px;
+        left:10px;
+    }
+
+    .Q{
+        width:100%;
+        min-width:100%;
+        max-width:100%;
+    }
+
+}
