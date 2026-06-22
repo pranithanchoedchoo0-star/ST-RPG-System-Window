@@ -179,7 +179,15 @@ details[open] summary{margin-bottom:6px}
 </div>
 `;
 
-    $("body").append(html);
+$("body").append(`
+<div id="rpg-toggle-btn">🎮</div>
+${html}
+`);
+    $("#rpg-toggle-btn").on("click", () => {
+
+    $("#rpg-system-window").toggleClass("hidden");
+
+});
 
     // ลากหน้าต่างได้
     if ($.fn.draggable) {
