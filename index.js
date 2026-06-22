@@ -8,7 +8,7 @@ jQuery(() => {
     const html = `
 <div id="rpg-system-window">
 
-```html
+
 <style>
 .Q{font-family:'Sarabun',sans-serif;width:340px;min-width:340px;max-width:340px;background:linear-gradient(145deg,#1e2024,#141619);border-radius:10px;padding:12px;border:1px solid #44aaff40;box-shadow:0 4px 20px rgba(0,0,0,.6);color:#e0e0e0;box-sizing:border-box}
 .Q input[type=radio]{display:none}
@@ -177,8 +177,6 @@ details[open] summary{margin-bottom:6px}
     </div>
   </div>
 </div>
-```
-
 `;
 
     $("body").append(html);
