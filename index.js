@@ -189,3 +189,59 @@ details[open] summary{margin-bottom:6px}
     }
 
 });
+
+function getLastMessage(){
+
+    const messages = $(".mes");
+
+    if(messages.length === 0) return "";
+
+    return $(messages[messages.length-1]).text();
+}
+
+function parseRPGState(text){
+
+    const match =
+        text.match(
+            /<RPG_STATE>([\s\S]*?)<\/RPG_STATE>/
+        );
+
+    if(!match) return null;
+
+    try{
+        return JSON.parse(match[1]);
+    }
+    catch(e){
+        console.error(e);
+        return null;
+    }
+}
+
+function updateUI(data){
+
+    if(!data) return;
+
+    $("#hp-value")
+        .text(`${data.hp}/${data.max_hp}`);
+
+    $("#mp-value")
+        .text(`${data.mp}/${data.max_mp}`);
+
+    $("#level-value")
+        .text(data.level);
+
+    $(".M")
+        .text(`Coin: ${data.coin}`);
+}
+
+setInterval(() => {
+
+    const text = getLastMessage();
+
+    const data = parseRPGState(text);
+
+    if(data){
+        updateUI(data);
+    }
+
+},1000);
